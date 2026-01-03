@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Vintage Computer Library</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
   <header>
@@ -14,7 +14,7 @@
     {{ content | safe }}
   </main>
 
-  <script src="/assets/js/checkout.js"></script>
+  <script src="{{ '/assets/js/checkout.js' | url }}"></script>
 </body>
 </html>
 
