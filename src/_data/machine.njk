@@ -1,0 +1,22 @@
+---
+pagination:
+  data: machines
+  size: 1
+  alias: machine
+permalink: "machines/{{ machine.slug }}/index.html"
+layout: base.njk
+---
+
+<h2>{{ machine.name }}</h2>
+<img src="/assets/images/{{ machine.image }}" />
+<p><strong>Year:</strong> {{ machine.year }}</p>
+<p><strong>Manufacturer:</strong> {{ machine.manufacturer }}</p>
+<p>{{ machine.specs }}</p>
+
+<button class="checkout-btn" data-status="{{ machine.status }}">
+  {% if machine.status == "available" %}
+    Checkout
+  {% else %}
+    Unavailable
+  {% endif %}
+</button>

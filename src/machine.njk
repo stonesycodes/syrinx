@@ -1,0 +1,23 @@
+---
+pagination:
+  data: machines
+  size: 1
+  alias: machine
+permalink: "machines/{{ machine.slug }}/index.html"
+layout: base.njk
+---
+
+<h2>{{ machine.name }}</h2>
+
+<p><strong>Year:</strong> {{ machine.year }}</p>
+<p><strong>Manufacturer:</strong> {{ machine.manufacturer }}</p>
+
+<button
+  class="checkout-btn"
+  data-slug="{{ machine.slug }}"
+>
+  Checkout
+</button>
+
+<p id="checkout-status"></p>
+

@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+
+<h2>Vintage Computer Catalog</h2>
+
+<ul class="catalog">
+{% for machine in machines %}
+  <li class="card" data-slug="{{ machine.slug }}">
+    <h3>{{ machine.name }}</h3>
+    <p><strong>Year:</strong> {{ machine.year }}</p>
+
+    <p class="status">Status: Loading…</p>
+
+    <a href="/machines/{{ machine.slug }}/">View details</a>
+  </li>
+{% endfor %}
+</ul>
+
