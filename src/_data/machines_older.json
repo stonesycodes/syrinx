@@ -1,218 +1,218 @@
 [
   {
     "name": "Mac IIx",
-    "year": 1988,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_iix"
+    "slug": "Mac IIx"
   },
   {
     "name": "Mac IIfx",
-    "year": 1990,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "128mb RAM, SCS2HD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_iifx"
+    "slug": "Mac IIfx"
   },
   {
     "name": "G4 Cube",
-    "year": 2000,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "576mb RAM, 20gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "g4_cube"
+    "slug": "G4 Cube"
   },
   {
     "name": "Quadra 840av 1",
-    "year": 1993,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "128mb RAM",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "quadra_840av_1"
+    "slug": "Quadra 840av 1"
   },
   {
     "name": "Quadra 840av 2",
-    "year": 1993,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "quadra_840av_2"
+    "slug": "Quadra 840av 2"
   },
   {
     "name": "Mac IIsi v2",
-    "year": 1990,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "17mb",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_iisi_v2"
+    "slug": "Mac IIsi v2"
   },
   {
     "name": "Powermac 8600/300",
-    "year": 1997,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "144mb",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "powermac_8600/300"
+    "slug": "Powermac 8600/300"
   },
   {
     "name": "Mac mini a1228",
-    "year": 2007,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1228"
+    "slug": "Mac mini a1228"
   },
   {
     "name": "Mac IIsi",
-    "year": 1990,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_iisi"
+    "slug": "Mac IIsi"
   },
   {
     "name": "Mac Book Pro 3,1a",
-    "year": 2007,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_3,1a"
+    "slug": "Mac Book Pro 3,1a"
   },
   {
     "name": "SE/30 1",
-    "year": 1989,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "x",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "se/30_1"
+    "slug": "SE/30 1"
   },
   {
     "name": "SE/30 2",
-    "year": 1989,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "32mb RAM, 500mb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "se/30_2"
+    "slug": "SE/30 2"
   },
   {
     "name": "Mac IIci",
-    "year": 1989,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "128mb RAM, SCSI2HD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_iici"
+    "slug": "Mac IIci"
   },
   {
     "name": "Powermac 7600/180",
-    "year": 1996,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "88mb RAM, 2gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "powermac_7600/180"
+    "slug": "Powermac 7600/180"
   },
   {
     "name": "Mac Book pro nauto",
-    "year": 2017,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "16gb RAM, 500gb SSD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_nauto"
+    "slug": "Mac Book pro nauto"
   },
   {
     "name": "Powerbook G3 Pismo",
-    "year": 2000,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "1gb RAM, 120gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "powerbook_g3_pismo"
+    "slug": "Powerbook G3 Pismo"
   },
   {
     "name": "Mac mini a1176",
-    "year": 2006,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "1gb RAM, 80gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1176"
+    "slug": "Mac mini a1176"
   },
   {
     "name": "Mac SE",
-    "year": 1987,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "2.5mb RAM, 40mb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_se"
+    "slug": "Mac SE"
   },
   {
     "name": "Quadra 700",
-    "year": 1991,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "64mb RAM, SCSI2HD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "quadra_700"
+    "slug": "Quadra 700"
   },
   {
     "name": "G4 Tower",
-    "year": 1999,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "640mb RAM, 120gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "g4_tower"
+    "slug": "G4 Tower"
   },
   {
     "name": "Mac Mini Upstairs ",
-    "year": 2017,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "8gb RAM, 1TB SSD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_upstairs_"
+    "slug": "Mac Mini Upstairs "
   },
   {
     "name": "Mac Book Pro 3,1b",
-    "year": 2007,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "5gb RAM, 120gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_3,1b"
+    "slug": "Mac Book Pro 3,1b"
   },
   {
     "name": "Mac Mini Downstairs - A1347",
-    "year": 2014,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "16gb RAM, 500gb SSD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_downstairs_-_a1347"
+    "slug": "Mac Mini Downstairs - A1347"
   },
   {
     "name": "Mac mini a1283",
-    "year": 2009,
+    "year": "",
     "manufacturer": "Apple",
-    "specs": "2gb RAM, 320gb HDD",
+    "specs": "",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1283"
+    "slug": "Mac mini a1283"
   }
 ]

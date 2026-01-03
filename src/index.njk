@@ -12,7 +12,7 @@ layout: base.njk
 
     <p class="status">Status: Loading…</p>
 
-    <a href="/machines/{{ machine.slug }}/">View details</a>
+    <a href="{{ '/machines/' + machine.slug + '/' | url }}">View details</a>
   </li>
 {% endfor %}
 </ul>
