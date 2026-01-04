@@ -9,10 +9,11 @@ layout: base.njk
   <li class="card" data-slug="{{ machine.slug }}">
     <h3>{{ machine.name }}</h3>
     <p><strong>Year:</strong> {{ machine.year }}</p>
+    <p><strong>Specs:</strong> {{ machine.specs }}</p>
 
     <p class="status">Status: Loading…</p>
 
-    <a href="{{ '/machines/' + machine.slug + '/' | url }}">View details</a>
+    <a href="{{('/machines/' + machine.slug + '/') |url }}">View details</a>
   </li>
 {% endfor %}
 </ul>
