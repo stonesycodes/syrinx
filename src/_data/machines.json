@@ -6,7 +6,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "mac_iix"
+    "slug": "mac-iix"
   },
   {
     "name": "Mac IIfx",
@@ -15,7 +15,7 @@
     "specs": "128mb RAM, SCS2HD",
     "image": "",
     "status": "yes",
-    "slug": "mac_iifx"
+    "slug": "mac-iifx"
   },
   {
     "name": "G4 Cube",
@@ -24,7 +24,7 @@
     "specs": "576mb RAM, 20gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "g4_cube"
+    "slug": "g4-cube"
   },
   {
     "name": "Quadra 840av 1",
@@ -33,7 +33,7 @@
     "specs": "128mb RAM",
     "image": "",
     "status": "yes",
-    "slug": "quadra_840av_1"
+    "slug": "quadra-840av-1"
   },
   {
     "name": "Quadra 840av 2",
@@ -42,7 +42,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "quadra_840av_2"
+    "slug": "quadra-840av-2"
   },
   {
     "name": "Mac IIsi v2",
@@ -51,7 +51,7 @@
     "specs": "17mb",
     "image": "",
     "status": "yes",
-    "slug": "mac_iisi_v2"
+    "slug": "mac-iisi-v2"
   },
   {
     "name": "Powermac 8600/300",
@@ -60,7 +60,7 @@
     "specs": "144mb",
     "image": "",
     "status": "yes",
-    "slug": "powermac_8600/300"
+    "slug": "powermac-8600-300"
   },
   {
     "name": "Mac mini a1228",
@@ -69,7 +69,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1228"
+    "slug": "mac-mini-a1228"
   },
   {
     "name": "Mac IIsi",
@@ -78,7 +78,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "mac_iisi"
+    "slug": "mac-iisi"
   },
   {
     "name": "Mac Book Pro 3,1a",
@@ -87,7 +87,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_3,1a"
+    "slug": "mac-book-pro-3-1a"
   },
   {
     "name": "SE/30 1",
@@ -96,7 +96,7 @@
     "specs": "x",
     "image": "",
     "status": "yes",
-    "slug": "se/30_1"
+    "slug": "se-30-1"
   },
   {
     "name": "SE/30 2",
@@ -105,7 +105,7 @@
     "specs": "32mb RAM, 500mb HDD",
     "image": "",
     "status": "yes",
-    "slug": "se/30_2"
+    "slug": "se-30-2"
   },
   {
     "name": "Mac IIci",
@@ -114,7 +114,7 @@
     "specs": "128mb RAM, SCSI2HD",
     "image": "",
     "status": "yes",
-    "slug": "mac_iici"
+    "slug": "mac-iici"
   },
   {
     "name": "Powermac 7600/180",
@@ -123,7 +123,7 @@
     "specs": "88mb RAM, 2gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "powermac_7600/180"
+    "slug": "powermac-7600-180"
   },
   {
     "name": "Mac Book pro nauto",
@@ -132,7 +132,7 @@
     "specs": "16gb RAM, 500gb SSD",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_nauto"
+    "slug": "mac-book-pro-nauto"
   },
   {
     "name": "Powerbook G3 Pismo",
@@ -141,7 +141,7 @@
     "specs": "1gb RAM, 120gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "powerbook_g3_pismo"
+    "slug": "powerbook-g3-pismo"
   },
   {
     "name": "Mac mini a1176",
@@ -150,7 +150,7 @@
     "specs": "1gb RAM, 80gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1176"
+    "slug": "mac-mini-a1176"
   },
   {
     "name": "Mac SE",
@@ -159,7 +159,7 @@
     "specs": "2.5mb RAM, 40mb HDD",
     "image": "",
     "status": "yes",
-    "slug": "mac_se"
+    "slug": "mac-se"
   },
   {
     "name": "Quadra 700",
@@ -168,7 +168,7 @@
     "specs": "64mb RAM, SCSI2HD",
     "image": "",
     "status": "yes",
-    "slug": "quadra_700"
+    "slug": "quadra-700"
   },
   {
     "name": "G4 Tower",
@@ -177,7 +177,7 @@
     "specs": "640mb RAM, 120gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "g4_tower"
+    "slug": "g4-tower"
   },
   {
     "name": "Mac Mini Upstairs ",
@@ -186,7 +186,7 @@
     "specs": "8gb RAM, 1TB SSD",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_upstairs_"
+    "slug": "mac-mini-upstairs-"
   },
   {
     "name": "Mac Book Pro 3,1b",
@@ -195,7 +195,7 @@
     "specs": "5gb RAM, 120gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "mac_book_pro_3,1b"
+    "slug": "mac-book-pro-3-1b"
   },
   {
     "name": "Mac Mini Downstairs - A1347",
@@ -204,7 +204,7 @@
     "specs": "16gb RAM, 500gb SSD",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_downstairs_-_a1347"
+    "slug": "mac-mini-downstairs-a1347"
   },
   {
     "name": "Mac mini a1283",
@@ -213,6 +213,6 @@
     "specs": "2gb RAM, 320gb HDD",
     "image": "",
     "status": "yes",
-    "slug": "mac_mini_a1283"
+    "slug": "mac-mini-a1283"
   }
 ]
