@@ -5,15 +5,23 @@ layout: base.njk
 <h2>Vintage Computer Catalog</h2>
 
 <ul class="catalog">
+<li class="card header">
+  <strong>Name</strong>
+  <strong class="year">Year</strong>
+  <strong>Status</strong>
+  <strong></strong>
+</li>
+
 {% for machine in machines %}
   <li class="card" data-slug="{{ machine.slug }}">
-    <h3>{{ machine.name }}</h3>
-    <p><strong>Year:</strong> {{ machine.year }}</p>
-    <p><strong>Specs:</strong> {{ machine.specs }}</p>
-
-    <p class="status">Status: Loading…</p>
-
-    <a href="{{('/machines/' + machine.slug + '/') |url }}">View details</a>
+    <span class="col name">{{ machine.name }}</span>
+    <span class="col year">{{ machine.year }}</span>
+    <span class="col status">Loading…</span>
+    <span class="col action">
+      <a href="{{ ('/machines/' + machine.slug + '/') | url }}">
+        View
+      </a>
+    </span>
   </li>
 {% endfor %}
 </ul>

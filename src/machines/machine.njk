@@ -11,9 +11,10 @@ permalink: "/machines/{{ machine.slug }}/index.html"
 
 <ul>
   <li><strong>Year:</strong> {{ machine.year }}</li>
+  <li><strong>Specs:</strong> {{ machine.specs }}</li>
 </ul>
 
-<p class="status">Status: Loading…</p>
+<p class="status">Loading…</p>
 
 <button class="checkout-btn" data-slug="{{ machine.slug }}">
   Check out

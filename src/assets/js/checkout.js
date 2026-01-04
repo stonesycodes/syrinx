@@ -22,10 +22,10 @@ function updateCatalogStatuses() {
     if (!statusEl) return;
 
     if (checkouts[slug]?.checkedOut) {
-      statusEl.textContent = "Status: Checked out";
+      statusEl.textContent = "Checked out";
       statusEl.classList.add("checked-out");
     } else {
-      statusEl.textContent = "Status: Available";
+      statusEl.textContent = "Available";
       statusEl.classList.remove("checked-out");
     }
   });
