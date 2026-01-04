@@ -1,0 +1,27 @@
+---
+layout: base.njk
+pagination:
+  data: machines
+  size: 1
+  alias: machine
+permalink: "/machines/{{ machine.slug }}/index.html"
+---
+
+<h2>{{ machine.name }}</h2>
+
+<ul>
+  <li><strong>Year:</strong> {{ machine.year }}</li>
+  <li><strong>Status:</strong> {{ machine.status }}</li>
+</ul>
+
+{% if machine.status == "available" %}
+  <button data-slug="{{ machine.slug }}" class="checkout-btn">
+    Check Out
+  </button>
+{% else %}
+  <p><em>Currently checked out</em></p>
+{% endif %}
+
+<p>
+  <a href="{{ '/' | url }}">← Back to catalog</a>
+</p>
