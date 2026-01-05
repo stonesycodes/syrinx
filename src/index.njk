@@ -7,22 +7,20 @@ layout: base.njk
 <ul class="catalog">
 <li class="card header">
   <strong>Name</strong>
-  <strong class="year">Year</strong>
+  <strong class="col year">Year</strong>
   <strong>Status</strong>
-  <strong></strong>
 </li>
-
 {% for machine in machines %}
   <li class="card" data-slug="{{ machine.slug }}">
-    <span class="col name">{{ machine.name }}</span>
-    <span class="col year">{{ machine.year }}</span>
-    <span class="col status">Loading…</span>
-    <span class="col action">
-      <a href="{{ ('/machines/' + machine.slug + '/') | url }}">
-        View
-      </a>
-    </span>
-  </li>
+  <span class="col name">
+    <a class="name-link" href="{{ ('/machines/' + machine.slug + '/') | url }}">
+      {{ machine.name }}
+    </a>
+  </span>
+  <span class="col year">{{ machine.year }}</span>
+  <span class="col status">Loading…</span>
+</li>
+
 {% endfor %}
 </ul>
 

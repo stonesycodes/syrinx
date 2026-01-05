@@ -47,7 +47,7 @@ h1, h2, h3 {
 
 .card {
   display: grid;
-  grid-template-columns: 320px 90px 160px 80px;
+  grid-template-columns: 420px 90px 160px;
   align-items: center;
   padding: 6px 8px;
   border-bottom: 1px solid #999;
@@ -158,4 +158,27 @@ a:hover {
   border-bottom: 2px solid #000;
 }
 
+.name-link {
+  color: #000;
+  text-decoration: none;
+}
 
+.name-link:hover {
+  text-decoration: underline;
+}
+
+.status[data-state="available"] {
+  color: #000;
+}
+
+.status[data-state="checked-out"] {
+  font-weight: bold;
+}
+
+.status[data-state="repairing"] {
+  font-style: italic;
+}
+
+.status[data-state="repairing"]::before {
+  content: "⚠ ";
+}

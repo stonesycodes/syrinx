@@ -2,18 +2,18 @@ const STORAGE_KEY = "vintage-computer-checkouts";
 
 /* ---------- helpers ---------- */
 
-function loadCheckouts() {
+function loadState() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 }
 
-function saveCheckouts(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-/* ---------- catalog page ---------- */
+/* ---------- catalog ---------- */
 
-function updateCatalogStatuses() {
-  const checkouts = loadCheckouts();
+function updateCatalog() {
+  const state = loadState();
 
   document.querySelectorAll(".card").forEach(card => {
     const slug = card.dataset.slug;
@@ -21,57 +21,105 @@ function updateCatalogStatuses() {
 
     if (!statusEl) return;
 
-    if (checkouts[slug]?.checkedOut) {
-      statusEl.textContent = "Checked out";
-      statusEl.classList.add("checked-out");
-    } else {
+    const entry = state[slug];
+
+    if (!entry) {
       statusEl.textContent = "Available";
-      statusEl.classList.remove("checked-out");
+      statusEl.dataset.state = "available";
+      return;
     }
+
+    statusEl.textContent = formatStatus(entry.status);
+    statusEl.dataset.state = entry.status;
   });
 }
 
-/* ---------- machine detail page ---------- */
+/* ---------- machine page ---------- */
 
 function setupMachinePage() {
   const btn = document.querySelector(".checkout-btn");
-  if (!btn) return;
-
-  const slug = btn.dataset.slug;
   const statusEl = document.querySelector(".status");
 
-  const checkouts = loadCheckouts();
+  if (!btn || !statusEl) return;
+
+  const slug = btn.dataset.slug;
+  const state = loadState();
 
   function render() {
-    if (checkouts[slug]?.checkedOut) {
-      statusEl.textContent = "Status: Checked out";
-      btn.textContent = "Return";
-    } else {
-      statusEl.textContent = "Status: Available";
+    const entry = state[slug];
+
+    if (!entry) {
+      statusEl.textContent = "Available";
+      statusEl.dataset.state = "available";
       btn.textContent = "Check out";
+      return;
+    }
+
+    statusEl.textContent = formatStatus(entry.status);
+    statusEl.dataset.state = entry.status;
+
+    if (entry.status === "checked-out") {
+      btn.textContent = "Return";
+    } else if (entry.status === "repairing") {
+      btn.textContent = "Mark Available";
     }
   }
 
   btn.addEventListener("click", () => {
-    if (checkouts[slug]?.checkedOut) {
-      delete checkouts[slug];
-    } else {
-      checkouts[slug] = {
-        checkedOut: true,
-        date: new Date().toISOString().split("T")[0]
-      };
+    const entry = state[slug];
+
+    if (!entry) {
+      state[slug] = { status: "checked-out", date: today() };
+    } else if (entry.status === "checked-out") {
+      delete state[slug];
+    } else if (entry.status === "repairing") {
+      delete state[slug];
     }
 
-    saveCheckouts(checkouts);
+    saveState(state);
     render();
+    updateCatalog();
   });
 
   render();
 }
 
+/* ---------- repair button ---------- */
+function setupRepairButton() {
+  const btn = document.querySelector(".repair-btn");
+  if (!btn) return;
+
+  const slug = btn.dataset.slug;
+  const state = loadState();
+
+  btn.addEventListener("click", () => {
+    state[slug] = {
+      status: "repairing",
+      date: today()
+    };
+
+    saveState(state);
+    updateCatalog();
+    location.reload();
+  });
+}
+/* ---------- utilities ---------- */
+
+function today() {
+  return new Date().toISOString().split("T")[0];
+}
+
+function formatStatus(status) {
+  if (status === "checked-out") return "Checked out";
+  if (status === "repairing") return "Repairing";
+  return "Available";
+}
+
 /* ---------- init ---------- */
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateCatalogStatuses();
+  updateCatalog();
   setupMachinePage();
+  setupRepairButton();
 });
+
