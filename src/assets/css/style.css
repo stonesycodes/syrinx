@@ -185,11 +185,13 @@ a:hover {
 
 .mac-hero {
   position: relative;
-  max-width: 760px;
-  margin: 30px auto;
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
 .mac-frame {
+  position: relative;
+  z-index: 1;  
   width: 100%;
   height: auto;
   display: block;
@@ -197,14 +199,15 @@ a:hover {
 
 .mac-screen {
   position: absolute;
+  z-index: 2;  
 
   /* 🔧 TUNE THESE FOUR VALUES */
-  top: 24%;
-  left: 18%;
-  width: 64%;
-  height: 30%;
+  top: 10%;
+  left: 17%;
+  width: 67%;
+  height: 40%;
 
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .screen-window {

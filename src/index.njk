@@ -4,11 +4,14 @@ layout: base.njk
 
 <section class="mac-hero">
   <!-- Mac frame -->
-  <img
-    src="{{ '/assets/images/macintosh-se30.png' | url }}"
-    alt="Macintosh SE"
-    class="mac-frame"
-  />
+  <picture>
+    <source srcset="{{ '/assets/images/mac-se.webp' | url }}" type="image/webp">
+      <img
+        src="{{ '/assets/images/mac-se.png' | url }}"
+        alt="Macintosh SE"
+        class="mac-frame"
+    >
+  </picture>
 
   <!-- Screen overlay -->
   <div class="mac-screen">
