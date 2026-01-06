@@ -7,24 +7,23 @@ pagination:
 permalink: "/machines/{{ machine.slug }}/index.html"
 ---
 
-<h2>{{ machine.name }}</h2>
+{% set screen_html %}
+  <h2 class="screen-title">{{ machine.name }}</h2>
 
-<ul>
-  <li><strong>Year:</strong> {{ machine.year }}</li>
-  <li><strong>Specs:</strong> {{ machine.specs }}</li>
-</ul>
+  <div class="detail">
+    <div><strong>Year:</strong> {{ machine.year }}</div>
 
-<p class="status">Loading…</p>
+    <p class="status">Loading…</p>
 
-<button class="checkout-btn" data-slug="{{ machine.slug }}">
-  Check out
-</button>
+    <div class="detail-actions">
+      <button class="checkout-btn" data-slug="{{ machine.slug }}">Check out</button>
+      <button class="repair-btn" data-slug="{{ machine.slug }}">Mark as Repairing</button>
+    </div>
 
-<button class="repair-btn" data-slug="{{ machine.slug }}">
-  Mark as Repairing
-</button>
+    <p>
+      <a href="{{ '/' | url }}">← Back to catalog</a>
+    </p>
+  </div>
+{% endset %}
 
-<p>
-  <a href="{{ '/' | url }}">← Back to catalog</a>
-</p>
-
+{% include "mac-frame.njk" %}
