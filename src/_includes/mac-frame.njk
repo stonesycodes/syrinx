@@ -7,8 +7,100 @@
 
   <div class="mac-screen">
     <div class="screen-window">
-      {{ screen_html | safe }}
+
+      <!-- System 7 Menu Bar -->
+      <nav class="mac-menubar" aria-label="Menu bar">
+        <div class="menu-left">
+
+          <div class="menu-wrap apple-menu">
+            <button class="menu-btn" type="button" aria-haspopup="true" aria-expanded="false">
+              
+            </button>
+            <ul class="menu-dropdown" role="menu" aria-label="Apple menu">
+              <li role="none">
+                <button class="menu-item" type="button" data-action="about" role="menuitem">
+                  About Vintage Computer Library…
+                </button>
+              </li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Control Panels</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Chooser</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-wrap">
+            <span class="menu-label">File</span>
+            <ul class="menu-dropdown" role="menu" aria-label="File">
+              <li role="none"><span class="menu-item disabled" role="menuitem">New</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Open…</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Close</span></li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Get Info</span></li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Print…</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-wrap">
+            <span class="menu-label">Edit</span>
+            <ul class="menu-dropdown" role="menu" aria-label="Edit">
+              <li role="none"><span class="menu-item disabled" role="menuitem">Undo</span></li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Cut</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Copy</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Paste</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Clear</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-wrap">
+            <span class="menu-label">View</span>
+            <ul class="menu-dropdown" role="menu" aria-label="View">
+              <li role="none"><span class="menu-item disabled" role="menuitem">by Name</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">by Date</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">by Size</span></li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Clean Up</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-wrap">
+            <span class="menu-label">Special</span>
+            <ul class="menu-dropdown" role="menu" aria-label="Special">
+              <li role="none"><span class="menu-item disabled" role="menuitem">Empty Trash…</span></li>
+              <li class="menu-sep" role="none"></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Restart…</span></li>
+              <li role="none"><span class="menu-item disabled" role="menuitem">Shut Down…</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="menu-right">
+          <span class="mac-clock" id="mac-clock">12:00 PM</span>
+        </div>
+      </nav>
+
+      <!-- Screen content area (scroll lives inside here) -->
+      <div class="screen-body">
+        {{ screen_html | safe }}
+      </div>
+
+      <!-- About dialog -->
+      <div class="dialog-overlay" id="about-overlay" hidden></div>
+      <div class="mac-dialog" id="about-dialog" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
+        <div class="mac-dialog-title" id="about-title">About</div>
+        <div class="mac-dialog-body">
+          <p><strong>Vintage Computer Library</strong></p>
+          <p>A tiny, System 7–inspired catalog for browsing and “checking out” classic machines.</p>
+          <p>Built with Eleventy + static hosting. Checkout state is stored locally in your browser.</p>
+          <p>Syrinx v 0.1.0</p>
+        </div>
+        <div class="mac-dialog-actions">
+          <button class="mac-btn" type="button" data-action="close-about">OK</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
