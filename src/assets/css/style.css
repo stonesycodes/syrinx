@@ -335,3 +335,52 @@ a:hover {
   font-size: 12px;
   padding: 3px 8px;
 }
+/* ===== System 7 Menu Bar ===== */
+
+.mac-menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 22px;
+  padding: 0 6px;
+
+  background: #e5e5e5;
+  border-bottom: 1px solid #000;
+
+  font-size: 13px;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Left side menus */
+.menu-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu {
+  cursor: default;
+}
+
+.apple {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+/* Right side clock */
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  font-weight: normal;
+}
+
+/* Keep menubar readable under CRT vignette */
+.mac-menubar {
+  position: relative;
+  z-index: 3;
+}

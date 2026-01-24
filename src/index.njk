@@ -3,7 +3,20 @@ layout: base.njk
 ---
 
 {% set screen_html %}
-  <h2 class="screen-title">Vintage Computer Catalog</h2>
+  <div class="mac-menubar">
+  <div class="menu-left">
+    <span class="apple"></span>
+    <span class="menu">File</span>
+    <span class="menu">Edit</span>
+    <span class="menu">View</span>
+    <span class="menu">Special</span>
+  </div>
+
+  <div class="menu-right">
+    <span class="clock" id="mac-clock">12:00 PM</span>
+  </div>
+</div>
+
 
   <ul class="catalog">
     <li class="card header">

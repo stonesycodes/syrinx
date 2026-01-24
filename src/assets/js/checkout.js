@@ -123,3 +123,20 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRepairButton();
 });
 
+function startMacClock() {
+  const el = document.getElementById("mac-clock");
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    el.textContent = now.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
+  update();
+  setInterval(update, 60000);
+}
+
+document.addEventListener("DOMContentLoaded", startMacClock);
