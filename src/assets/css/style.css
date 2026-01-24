@@ -335,3 +335,186 @@ a:hover {
   font-size: 12px;
   padding: 3px 8px;
 }
+/* ===== System 7 Menu Bar (inside CRT) ===== */
+.mac-menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 22px;
+  padding: 0 6px;
+
+  background: #e5e5e5;
+  border-bottom: 1px solid #000;
+
+  font-size: 13px;
+  font-weight: bold;
+  user-select: none;
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.mac-clock {
+  font-weight: normal;
+}
+
+.menu-wrap {
+  position: relative;
+}
+
+.menu-label {
+  cursor: default;
+}
+
+.menu-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: default;
+}
+
+/* Dropdown */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+
+  min-width: 170px;
+  padding: 4px 0;
+  margin: 0;
+
+  list-style: none;
+  background: #e5e5e5;
+
+  border: 2px solid #000;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+
+  z-index: 10;
+}
+
+.apple-menu .menu-dropdown { min-width: 220px; }
+
+/* Open on hover (mock behavior) */
+.menu-wrap:hover .menu-dropdown {
+  display: block;
+}
+
+/* Menu items */
+.menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  padding: 3px 10px;
+  font: inherit;
+  background: transparent;
+  border: none;
+  cursor: default;
+  color: #000;
+  white-space: nowrap;
+}
+
+.menu-item.disabled {
+  opacity: 0.55;
+}
+
+.menu-item:not(.disabled):hover {
+  background: #000;
+  color: #fff;
+}
+
+.menu-sep {
+  height: 1px;
+  background: #000;
+  margin: 4px 6px;
+}
+
+/* Screen content wrapper so catalog can scroll under the menubar */
+.screen-window {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.screen-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* If your catalog should scroll in the CRT */
+.mac-screen .catalog {
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== About dialog ===== */
+.dialog-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 20;
+}
+
+.mac-dialog {
+  position: absolute;
+  left: 12%;
+  top: 18%;
+  width: 76%;
+
+  background: #e5e5e5;
+  border: 2px solid #000;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+
+  z-index: 21;
+}
+
+.mac-dialog-title {
+  padding: 4px 6px;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+}
+
+.mac-dialog-body {
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.mac-dialog-actions {
+  padding: 0 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.mac-btn {
+  font-family: inherit;
+  background: #e5e5e5;
+  border: 2px solid #000;
+  padding: 3px 14px;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+}
+
+.mac-btn:active {
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #888;
+}

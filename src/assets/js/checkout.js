@@ -123,3 +123,50 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRepairButton();
 });
 
+function startMacClock() {
+  const el = document.getElementById("mac-clock");
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    el.textContent = now.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+
+  update();
+  setInterval(update, 60_000);
+}
+
+function setupAboutDialog() {
+  const overlay = document.getElementById("about-overlay");
+  const dialog = document.getElementById("about-dialog");
+  if (!overlay || !dialog) return;
+
+  function open() {
+    overlay.hidden = false;
+    dialog.hidden = false;
+  }
+
+  function close() {
+    overlay.hidden = true;
+    dialog.hidden = true;
+  }
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-action]");
+    if (!btn) return;
+
+    const action = btn.getAttribute("data-action");
+    if (action === "about") open();
+    if (action === "close-about") close();
+  });
+
+  overlay.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  startMacClock();
+  setupAboutDialog();
+});
