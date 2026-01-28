@@ -2,6 +2,7 @@
 :root {
   --mac-font: Chicago, Geneva, Helvetica, Arial, sans-serif;
   --bg-gray: #c6c6c6;
+  --system-gray: #e5e5e5; /* menu bar + title bars */
   --window-gray: #dcdcdc;
   --border-dark: #000;
   --border-light: #fff;
@@ -81,6 +82,81 @@ h1, h2, h3 {
   cursor: not-allowed;
 }
 
+/* ===== Finder window chrome ===== */
+.finder-window{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+
+  background: var(--system-gray);
+  border: 2px solid #000;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+}
+
+.finder-titlebar{
+  display: grid;
+  grid-template-columns: 20px 1fr20px;
+  align-items: center;
+
+  height: 22px;
+  padding: 2px 6px;
+
+  background: var(--system-gray);
+  border-bottom: 1px solid #000;
+}
+
+.finder-title{
+  justify-self: center;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Button boxes */
+.finder-btn{
+  box-sizing: border-box;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  background: var(--system-gray);
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+}
+/* Make sure they sit left/right, not stretched */
+.finder-btn.close{ justify-self: start; }
+.finder-btn.zoom { justify-self: end; }
+
+
+.finder-btn.close::after{
+  content: "";
+  display: block;
+  width: 2px;
+  height: 2px;
+  margin: 4px auto 0;
+  background: #000;
+}
+
+.finder-content{
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.finder-content .catalog{
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+.finder-window .card,
+.finder-window .card.header{
+  grid-template-columns: minmax(0, 1fr) 60px 95px;
+  column-gap: 8px;
+}
+
 /* ===== Mac Window ===== */
 main {
   max-width: 900px;
@@ -152,10 +228,11 @@ a:hover {
   text-align: right;
 }
 
-.card.header {
-  background: #bdbdbd;
+/* Column header row */
+.card.header{
+  background: var(--system-gray);
   font-weight: bold;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #000; /* keep the classic divider */
 }
 
 .name-link {
@@ -267,7 +344,7 @@ a:hover {
 }
 
 .mac-screen .card.header {
-  background: #bdbdbd;
+  background: var(--system-gray) !important;
   border-bottom: 2px solid #000;
 }
 
@@ -300,7 +377,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #bdbdbd;
+  background: var(--system-gray) !important;
 }
 
 /* Keep header aligned the same way */
@@ -343,7 +420,7 @@ a:hover {
   height: 22px;
   padding: 0 6px;
 
-  background: #e5e5e5;
+  background: var(--system-gray);
   border-bottom: 1px solid #000;
 
   font-size: 13px;
@@ -530,4 +607,91 @@ body,
 main {
   padding-bottom: 0;
   margin-bottom: 0;
+}
+/* === OVERRIDES: unify chrome + unsquash Finder buttons === */
+
+.mac-menubar {
+  background: var(--system-gray);
+}
+
+.finder-window {
+  background: var(--system-gray);
+}
+
+/* Finder title bar should match menu bar */
+.finder-titlebar {
+  background: var(--system-gray);
+  border-bottom: 1px solid var(--border-dark);
+
+  /* prevent squashed controls */
+  height: 22px;
+  padding: 2px 6px;
+
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  align-items: center;
+}
+
+/* close/zoom boxes: force true squares */
+.finder-btn {
+  box-sizing: border-box;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--system-gray);
+  border: 1px solid var(--border-dark);
+  box-shadow: inset 1px 1px 0 var(--border-light), inset -1px -1px 0 #888;
+}
+
+.finder-btn.close { justify-self: start; }
+.finder-btn.zoom  { justify-self: end; }
+
+/* Column header row should NOT be darker than the chrome */
+.card.header {
+  background: var(--system-gray);
+  border-bottom: 2px solid var(--border-dark);
+}
+/* === FINAL LAYERING: make CRT glass never darken UI chrome === */
+.mac-screen { isolation: isolate; }
+
+/* CRT overlays live "behind" the UI */
+.mac-screen::before { z-index: 1 !important; }
+.mac-screen::after  { z-index: 2 !important; }
+
+/* Everything inside the screen is above the overlays */
+.mac-screen .screen-window {
+  position: relative;
+  z-index: 3 !important;
+}
+
+/* Ensure Finder chrome isn't treated as below-glass */
+.finder-window,
+.finder-titlebar,
+.card.header {
+  position: relative;
+  z-index: 4 !important;
+}
+
+/* Apply CRT glass only to the content area (not chrome) */
+.mac-screen::before,
+.mac-screen::after {
+  content: none !important;
+}
+.finder-content {
+  position: relative;
+}
+
+.finder-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at center,
+      rgba(255,255,255,0.06) 0%,
+      rgba(0,0,0,0.00) 45%,
+      rgba(0,0,0,0.20) 75%,
+      rgba(0,0,0,0.35) 100%);
+  mix-blend-mode: multiply;
 }
