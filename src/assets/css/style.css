@@ -186,7 +186,7 @@ a:hover {
 .mac-hero {
   position: relative;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .mac-frame {
@@ -411,7 +411,7 @@ a:hover {
 .apple-menu .menu-dropdown { min-width: 220px; }
 
 /* Open on hover (mock behavior) */
-.menu-wrap:hover .menu-dropdown {
+.menu-wrap.open .menu-dropdown {
   display: block;
 }
 
@@ -517,4 +517,17 @@ a:hover {
 
 .mac-btn:active {
   box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #888;
+}
+.about-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.about-link:active {
+  opacity: 0.75;
+}
+body,
+main {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

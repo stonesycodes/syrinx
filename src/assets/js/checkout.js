@@ -170,3 +170,28 @@ document.addEventListener("DOMContentLoaded", () => {
   startMacClock();
   setupAboutDialog();
 });
+function setupMenuBar() {
+  const menus = document.querySelectorAll(".menu-wrap");
+
+  function closeAll() {
+    menus.forEach(m => m.classList.remove("open"));
+  }
+
+  menus.forEach(menu => {
+    const trigger = menu.querySelector(".menu-btn, .menu-label");
+    if (!trigger) return;
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.contains("open");
+      closeAll();
+      if (!isOpen) menu.classList.add("open");
+    });
+  });
+
+  document.addEventListener("click", closeAll);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupMenuBar();
+});
