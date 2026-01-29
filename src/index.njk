@@ -4,11 +4,19 @@ layout: base.njk
 
 {% set screen_html %}
   <div class="finder-window">
-    <div class="finder-titlebar" aria-hidden="true">
-      <span class="finder-btn close"></span>
+    
+  <div class="finder-titlebar" aria-hidden="true">
+    <span class="finder-btn close"></span>
+
+    <div class="finder-titlewrap">
+      <span class="finder-grab" aria-hidden="true"></span>
       <div class="finder-title">Vintage Computer Catalog</div>
-      <span class="finder-btn zoom"></span>
+      <span class="finder-grab" aria-hidden="true"></span>
     </div>
+
+  <span class="finder-btn zoom"></span>
+</div>
+
 
     <div class="finder-content">
       <ul class="catalog">

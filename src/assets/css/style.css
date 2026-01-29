@@ -695,3 +695,22 @@ main {
       rgba(0,0,0,0.35) 100%);
   mix-blend-mode: multiply;
 }
+/* === Finder grab bars (3 thick lines) === */
+.finder-titlewrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  min-width: 0; /* allow title truncation */
+}
+
+.finder-grab {
+  flex: 1;
+  height: 12px;
+  min-width: 18px;
+
+  background:
+    linear-gradient(var(--border-dark), var(--border-dark)) 0 2px / 100% 2px no-repeat,
+    linear-gradient(var(--border-dark), var(--border-dark)) 0 6px / 100% 2px no-repeat,
+    linear-gradient(var(--border-dark), var(--border-dark)) 0 10px / 100% 2px no-repeat;
+}
