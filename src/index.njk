@@ -2,11 +2,17 @@
 layout: base.njk
 ---
 
-{% set screen_html %}
+
   <div class="finder-window">
     <div class="finder-titlebar" aria-hidden="true">
       <span class="finder-btn close"></span>
-      <div class="finder-title">Vintage Computer Catalog</div>
+
+      <div class="finder-titlewrap">
+        <span class="finder-grab" aria-hidden="true"></span>
+        <div class="finder-title">Vintage Computer Catalog</div>
+        <span class="finder-grab" aria-hidden="true"></span>
+      </div>
+
       <span class="finder-btn zoom"></span>
     </div>
 
@@ -26,12 +32,9 @@ layout: base.njk
               </a>
             </span>
             <span class="col year">{{ machine.year }}</span>
-            <span class="col status">Loading…</span>
+            <span class="col status status-cell" data-slug="{{ machine.slug }}">Loading…</span>
           </li>
         {% endfor %}
       </ul>
     </div>
   </div>
-{% endset %}
-
-{% include "mac-frame.njk" %}
