@@ -18,42 +18,44 @@ permalink: "/machines/{{ machine.slug }}/index.html"
     </div>
 
     <span class="finder-btn zoom"></span>
-  </div> 
+  </div>
 
   <div class="finder-content">
-    <div class="detail">
-      <div class="mini-grid">
-        <div class="mini-row header">
-          <strong>Year</strong>
-          <strong>Status</strong>
-        </div>
+    <div class="finder-detail">
+      <div class="detail">
+        <div class="mini-grid">
+          <div class="mini-row header">
+            <strong>Year</strong>
+            <strong>Status</strong>
+          </div>
 
-        <div class="mini-row">
-          <div class="cell year">{{ machine.year }}</div>
-          <div class="cell status">
-            <span class="status" data-state="{{ machine.status }}">{{ machine.status }}</span>
+          <div class="mini-row">
+            <div class="cell year">{{ machine.year }}</div>
+            <div class="cell status">
+              <span class="status" data-state="{{ machine.status }}">{{ machine.status }}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="detail-actions">
-        <button
-          class="checkout-btn status-toggle"
-          type="button"
-          data-slug="{{ machine.slug }}"
-          data-toggle="available">
-          Mark Available
-        </button>
+        <div class="detail-actions">
+          <button
+            class="checkout-btn status-toggle"
+            type="button"
+            data-slug="{{ machine.slug }}"
+            data-toggle="available">
+            Mark Available
+          </button>
 
-        <button
-          class="checkout-btn status-toggle"
-          type="button"
-          data-slug="{{ machine.slug }}"
-          data-toggle="repairing">
-          Mark As Repairing
-        </button>
+          <button
+            class="checkout-btn status-toggle"
+            type="button"
+            data-slug="{{ machine.slug }}"
+            data-toggle="repairing">
+            Mark As Repairing
+          </button>
 
-        <a class="button" href="{{ '/' | url }}">← Back to catalog</a>
+          <a class="button" href="{{ '/' | url }}">← Back to catalog</a>
+        </div>
       </div>
     </div>
   </div>

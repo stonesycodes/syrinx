@@ -144,6 +144,13 @@ h1, h2, h3 {
   display: flex;
 }
 
+.finder-detail {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 8px;
+}
+
 .finder-content .catalog{
   flex: 1;
   min-height: 0;
