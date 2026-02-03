@@ -144,6 +144,30 @@ h1, h2, h3 {
   display: flex;
 }
 
+.machine-content {
+  flex-direction: column;
+}
+
+.machine-headerbar {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr 160px;
+  background: var(--system-gray);
+  border-bottom: 2px solid var(--border-dark);
+  font-size: 12px;
+}
+
+.machine-header-cell {
+  padding: 6px 8px;
+  border-right: 1px solid var(--border-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.machine-header-cell:last-child {
+  border-right: none;
+}
+
 .finder-detail {
   flex: 1;
   min-height: 0;
@@ -694,6 +718,25 @@ main {
   inset: 0;
   pointer-events: none;
 
+  background:
+    radial-gradient(ellipse at center,
+      rgba(255,255,255,0.06) 0%,
+      rgba(0,0,0,0.00) 45%,
+      rgba(0,0,0,0.20) 75%,
+      rgba(0,0,0,0.35) 100%);
+  mix-blend-mode: multiply;
+}
+.machine-content::after {
+  content: none;
+}
+.machine-content .finder-detail {
+  position: relative;
+}
+.machine-content .finder-detail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background:
     radial-gradient(ellipse at center,
       rgba(255,255,255,0.06) 0%,
