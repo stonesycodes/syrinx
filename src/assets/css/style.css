@@ -219,6 +219,14 @@ button:active {
     inset 1px 1px 0 #888;
 }
 
+button:disabled,
+button[aria-disabled="true"] {
+  cursor: not-allowed;
+  color: #666;
+  background: #d8d8d8;
+  box-shadow: inset 1px 1px 0 #f2f2f2, inset -1px -1px 0 #aaa;
+}
+
 .card a {
   text-decoration: none;
   color: #000;
