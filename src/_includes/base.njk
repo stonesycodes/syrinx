@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vintage Computer Library</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=0.2.1' | url }}">
+  <meta charset="UTF-8" />
+  <title>{{ title or "Syrinx" }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
   <main>
-    {{ content | safe }}
+    {% include "mac-frame.njk" %}
   </main>
 
   <script src="{{ '/assets/js/checkout.js' | url }}"></script>
 </body>
+
 <footer style="font-size: 11px; text-align: center; margin-top: 12px;">
   Syrinx v0.2.0
 </footer>

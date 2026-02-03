@@ -7,23 +7,63 @@ pagination:
 permalink: "/machines/{{ machine.slug }}/index.html"
 ---
 
-{% set screen_html %}
-  <h2 class="screen-title">{{ machine.name }}</h2>
+<div class="finder-window">
+  <div class="finder-titlebar" aria-hidden="true">
+    <span class="finder-btn close"></span>
 
-  <div class="detail">
-    <div><strong>Year:</strong> {{ machine.year }}</div>
-
-    <p class="status">Loading…</p>
-
-    <div class="detail-actions">
-      <button class="checkout-btn" data-slug="{{ machine.slug }}">Check out</button>
-      <button class="repair-btn" data-slug="{{ machine.slug }}">Mark as Repairing</button>
+    <div class="finder-titlewrap">
+      <span class="finder-grab" aria-hidden="true"></span>
+      <div class="finder-title">{{ machine.name }}</div>
+      <span class="finder-grab" aria-hidden="true"></span>
     </div>
 
-    <p>
-      <a href="{{ '/' | url }}">← Back to catalog</a>
-    </p>
+    <span class="finder-btn zoom"></span>
   </div>
-{% endset %}
 
-{% include "mac-frame.njk" %}
+  <div class="finder-content machine-content">
+    <div class="machine-headerbar" aria-hidden="true">
+      <div class="machine-header-cell">Manufacturer</div>
+      <div class="machine-header-cell">Manuf Date</div>
+      <div class="machine-header-cell">Specifications</div>
+      <div class="machine-header-cell">Machine Image</div>
+    </div>
+
+    <div class="finder-detail">
+      <div class="detail">
+        <div class="mini-grid">
+          <div class="mini-row header">
+            <strong>Year</strong>
+            <strong>Status</strong>
+          </div>
+
+          <div class="mini-row">
+            <div class="cell year">{{ machine.year }}</div>
+            <div class="cell status">
+              <span class="status" data-state="{{ machine.status }}">{{ machine.status }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-actions">
+          <button
+            class="checkout-btn status-toggle"
+            type="button"
+            data-slug="{{ machine.slug }}"
+            data-toggle="available">
+            Mark Available
+          </button>
+
+          <button
+            class="checkout-btn status-toggle"
+            type="button"
+            data-slug="{{ machine.slug }}"
+            data-toggle="repairing">
+            Mark As Repairing
+          </button>
+
+          <a class="button" href="{{ '/' | url }}">← Back to catalog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

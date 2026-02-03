@@ -144,6 +144,37 @@ h1, h2, h3 {
   display: flex;
 }
 
+.machine-content {
+  flex-direction: column;
+}
+
+.machine-headerbar {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr 160px;
+  background: var(--system-gray);
+  border-bottom: 2px solid var(--border-dark);
+  font-size: 12px;
+}
+
+.machine-header-cell {
+  padding: 6px 8px;
+  border-right: 1px solid var(--border-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.machine-header-cell:last-child {
+  border-right: none;
+}
+
+.finder-detail {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 8px;
+}
+
 .finder-content .catalog{
   flex: 1;
   min-height: 0;
@@ -695,22 +726,92 @@ main {
       rgba(0,0,0,0.35) 100%);
   mix-blend-mode: multiply;
 }
+.machine-content::after {
+  content: none;
+}
+.machine-content .finder-detail {
+  position: relative;
+}
+.machine-content .finder-detail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(255,255,255,0.06) 0%,
+      rgba(0,0,0,0.00) 45%,
+      rgba(0,0,0,0.20) 75%,
+      rgba(0,0,0,0.35) 100%);
+  mix-blend-mode: multiply;
+}
+
 /* === Finder grab bars (3 thick lines) === */
 .finder-titlewrap {
   display: flex;
   align-items: center;
   gap: 8px;
   justify-content: center;
-  min-width: 0; /* allow title truncation */
+  min-width: 0;
 }
 
 .finder-grab {
   flex: 1;
   height: 12px;
   min-width: 18px;
-
   background:
     linear-gradient(var(--border-dark), var(--border-dark)) 0 2px / 100% 2px no-repeat,
     linear-gradient(var(--border-dark), var(--border-dark)) 0 6px / 100% 2px no-repeat,
     linear-gradient(var(--border-dark), var(--border-dark)) 0 10px / 100% 2px no-repeat;
+}
+
+/* ===== Machine detail mini grid (Finder-like) ===== */
+.mini-grid {
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+
+  /* Use padding instead of margin so it fills the window width */
+  margin: 0;
+  padding: 8px;
+}
+
+.mini-row {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Year | Status */
+  align-items: center;
+  border-bottom: 1px solid #999;
+  font-size: 12px;
+}
+
+.mini-row:last-child {
+  border-bottom: none;
+}
+
+.mini-row.header strong {
+  background: var(--system-gray);
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+  text-align: left;
+}
+
+.mini-row .cell,
+.mini-row strong {
+  padding: 6px 8px;
+}
+
+.mini-row .cell.year {
+  text-align: left;
+  padding-right: 8px; /* normal padding */
+}
+
+/* Keep toggle buttons same width even when label changes */
+.status-toggle {
+  width: 150px;          /* adjust to taste */
+  text-align: center;
+  white-space: nowrap;
+}
+.status-toggle.is-on {
+  font-weight: bold;
 }

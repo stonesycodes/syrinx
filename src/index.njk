@@ -2,9 +2,7 @@
 layout: base.njk
 ---
 
-{% set screen_html %}
-  <div class="finder-window">
-    
+<div class="finder-window">
   <div class="finder-titlebar" aria-hidden="true">
     <span class="finder-btn close"></span>
 
@@ -14,32 +12,28 @@ layout: base.njk
       <span class="finder-grab" aria-hidden="true"></span>
     </div>
 
-  <span class="finder-btn zoom"></span>
-</div>
-
-
-    <div class="finder-content">
-      <ul class="catalog">
-        <li class="card header">
-          <strong>Name</strong>
-          <strong class="col year">Year</strong>
-          <strong>Status</strong>
-        </li>
-
-        {% for machine in machines %}
-          <li class="card" data-slug="{{ machine.slug }}">
-            <span class="col name">
-              <a class="name-link" href="{{ ('/machines/' + machine.slug + '/') | url }}">
-                {{ machine.name }}
-              </a>
-            </span>
-            <span class="col year">{{ machine.year }}</span>
-            <span class="col status">Loading…</span>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    <span class="finder-btn zoom"></span>
   </div>
-{% endset %}
 
-{% include "mac-frame.njk" %}
+  <div class="finder-content">
+    <ul class="catalog">
+      <li class="card header">
+        <strong>Name</strong>
+        <strong class="col year">Year</strong>
+        <strong>Status</strong>
+      </li>
+
+      {% for machine in machines %}
+        <li class="card" data-slug="{{ machine.slug }}">
+          <span class="col name">
+            <a class="name-link" href="{{ ('/machines/' + machine.slug + '/') | url }}">
+              {{ machine.name }}
+            </a>
+          </span>
+          <span class="col year">{{ machine.year }}</span>
+          <span class="col status status-cell" data-slug="{{ machine.slug }}">Loading…</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
