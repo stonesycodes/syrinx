@@ -70,7 +70,7 @@ function updateMachineUI(slug, state) {
   }
 
   // Optional checkout button (if you still use it)
-  const checkoutBtn = document.querySelector(".checkout-btn[data-slug]");
+  const checkoutBtn = document.querySelector(".checkout-btn[data-slug]:not(.status-toggle)");
   if (checkoutBtn) {
     const status = getStatusForSlug(state, slug);
     // If repairing, disable checkout/return
@@ -92,17 +92,31 @@ function updateMachineUI(slug, state) {
   const current = getStatusForSlug(state, slug);
 
   if (btnAvail) {
-    const on = current === "available";
-    btnAvail.classList.toggle("is-on", on);
-    btnAvail.textContent = on ? "Marked Available" : "Mark Available";
-    btnAvail.setAttribute("aria-pressed", on ? "true" : "false");
+    let label = "Mark Available";
+    let pressed = false;
+    let disabled = false;
+
+    if (current === "available") {
+      label = "Check Out";
+    } else if (current === "checked-out") {
+      label = "Return";
+      pressed = true;
+    } else if (current === "repairing") {
+      disabled = true;
+    }
+
+    btnAvail.classList.toggle("is-on", pressed);
+    btnAvail.textContent = label;
+    btnAvail.setAttribute("aria-pressed", pressed ? "true" : "false");
+    btnAvail.disabled = disabled;
   }
 
   if (btnRepair) {
     const on = current === "repairing";
     btnRepair.classList.toggle("is-on", on);
-    btnRepair.textContent = on ? "Repairing" : "Mark As Repairing";
+    btnRepair.textContent = on ? "Repaired" : "Mark As Repairing";
     btnRepair.setAttribute("aria-pressed", on ? "true" : "false");
+    btnRepair.disabled = current === "checked-out";
   }
 }
 
@@ -123,7 +137,7 @@ function setupMachinePage() {
   updateCatalog(state);
 
   // Checkout/Return (optional button)
-  const checkoutBtn = document.querySelector(".checkout-btn[data-slug]");
+  const checkoutBtn = document.querySelector(".checkout-btn[data-slug]:not(.status-toggle)");
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
       state = loadState();
@@ -165,9 +179,9 @@ function setupMachinePage() {
 
     if (which === "repairing") {
       // Toggle repairing on/off:
-      // - if already repairing -> fallback to checked-out
+      // - if already repairing -> set available
       // - else -> set repairing
-      next = (current === "repairing") ? "checked-out" : "repairing";
+      next = (current === "repairing") ? "available" : "repairing";
     }
 
     setStatusForSlug(state, slug, next);
