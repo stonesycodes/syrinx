@@ -23,21 +23,32 @@ permalink: "/machines/{{ machine.slug }}/index.html"
   <div class="finder-content machine-content">
     <div class="machine-headerbar" aria-hidden="true">
       <div class="machine-header-cell">Manufacturer</div>
-      <div class="machine-header-cell">Manuf Date</div>
+      <div class="machine-header-cell">Year</div>
       <div class="machine-header-cell">Specifications</div>
       <div class="machine-header-cell">Machine Image</div>
+    </div>
+
+    <div class="machine-meta">
+      <div class="machine-meta-cell">{{ machine.manufacturer }}</div>
+      <div class="machine-meta-cell">{{ machine.year }}</div>
+      <div class="machine-meta-cell">{{ machine.specs }}</div>
+      <div class="machine-meta-cell machine-image-cell">
+        <img
+          class="machine-image"
+          src="{{ ('/assets/images/' + machine.slug + '.webp') | url }}"
+          alt="{{ machine.name }}"
+        />
+      </div>
     </div>
 
     <div class="finder-detail">
       <div class="detail">
         <div class="mini-grid">
           <div class="mini-row header">
-            <strong>Year</strong>
             <strong>Status</strong>
           </div>
 
           <div class="mini-row">
-            <div class="cell year">{{ machine.year }}</div>
             <div class="cell status">
               <span class="status" data-state="{{ machine.status }}">{{ machine.status }}</span>
             </div>
